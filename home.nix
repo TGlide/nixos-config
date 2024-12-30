@@ -1,6 +1,7 @@
 {
   _config,
   pkgs,
+  lib,
   ...
 }: {
   home.username = "thomasgl";
@@ -156,6 +157,10 @@
         sudo chown -R root /etc/nixos
       '';
     };
+  };
+
+  programs.kitty = lib.mkForce {
+    enable = true;
   };
 
   # This value determines the home Manager release that your
