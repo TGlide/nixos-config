@@ -157,6 +157,7 @@
     cargo
     nodejs
     pnpm
+    vesktop
   ];
   environment.variables.EDITOR = "vim";
 
