@@ -149,6 +149,13 @@
         };
       }
     ];
+    functions = {
+      modify_nixos = ''
+        sudo chown -R thomasgl /etc/nixos
+        nvim /etc/nixos
+        sudo chown -R root /etc/nixos
+      '';
+    };
   };
 
   # This value determines the home Manager release that your
