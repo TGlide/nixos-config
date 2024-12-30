@@ -135,9 +135,8 @@
   };
 
   programs.fish.enable = true;
-
-  # Install firefox.
   programs.firefox.enable = true;
+  programs.hyprland.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
