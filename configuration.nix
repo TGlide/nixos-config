@@ -136,7 +136,10 @@
 
   programs.fish.enable = true;
   programs.firefox.enable = true;
-  programs.hyprland.enable = true;
+  programs.hyprland = {
+    enable = true;
+    xwayland.enable = true;
+  };
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
