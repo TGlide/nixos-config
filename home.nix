@@ -99,6 +99,9 @@
     ethtool
     pciutils # lspci
     usbutils # lsusb
+
+    # fun
+    spotify
   ];
 
   # basic configuration of git, please change to your own

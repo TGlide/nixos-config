@@ -153,6 +153,8 @@
     clang
     wl-clipboard
     cargo
+    nodejs
+    pnpm
   ];
   environment.variables.EDITOR = "vim";
 
