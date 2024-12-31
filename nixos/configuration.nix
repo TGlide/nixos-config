@@ -15,6 +15,7 @@
   # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.systemd-boot.configurationLimit = 20;
 
   powerManagement.enable = false;
 
@@ -160,6 +161,7 @@
     nodejs
     pnpm
     wofi
+    tofi
   ];
   environment.variables.EDITOR = "vim";
 
