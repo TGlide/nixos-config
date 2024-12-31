@@ -43,6 +43,9 @@
           # so the old configuration file still takes effect
           ./nixos/configuration.nix
 
+          # Overlays
+          # (import ./overlays)
+
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
           home-manager.nixosModules.home-manager
@@ -56,8 +59,6 @@
 
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
-
-          (import ./overlays)
 
           # Add Ghostty as a system package
           {
