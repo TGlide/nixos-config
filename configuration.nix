@@ -138,6 +138,7 @@
   programs.firefox.enable = true;
   programs.hyprland = {
     enable = true;
+    # enableNvidiaPatches = true;
     xwayland.enable = true;
   };
 
