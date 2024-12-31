@@ -44,7 +44,9 @@
           ./nixos/configuration.nix
 
           # Overlays
-          (import ./overlays)
+          {
+            nixpkgs.overlays = import ./overlays;
+          }
 
           # make home-manager as a module of nixos
           # so that home-manager configuration will be deployed automatically when executing `nixos-rebuild switch`
