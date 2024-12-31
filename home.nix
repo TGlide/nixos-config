@@ -103,6 +103,7 @@
 
     # fun
     spotify
+    vesktop
   ];
 
   # basic configuration of git, please change to your own
