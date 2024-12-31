@@ -102,8 +102,9 @@
     usbutils # lsusb
 
     # fun
-    spotify
-    vesktop
+    # spotify
+    # vesktop
+    # discord
   ];
 
   # basic configuration of git, please change to your own
@@ -179,6 +180,4 @@
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
-
-  nixpkgs.overlays = import "./overlays";
 }

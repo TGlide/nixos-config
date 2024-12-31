@@ -184,6 +184,11 @@
     pnpm
     wofi
     tofi
+
+    # fun
+    spotify
+    vesktop
+    discord
   ];
   environment.variables.EDITOR = "vim";
 
