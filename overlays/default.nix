@@ -1,0 +1,3 @@
+[
+  (import ./vesktop.nix)
+]

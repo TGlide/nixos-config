@@ -57,6 +57,8 @@
             # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
           }
 
+          (import ./overlays)
+
           # Add Ghostty as a system package
           {
             environment.systemPackages = [
