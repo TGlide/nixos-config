@@ -184,7 +184,6 @@
     pnpm
     wofi
     tofi
-    google-chrome
   ];
   environment.variables.EDITOR = "vim";
 
