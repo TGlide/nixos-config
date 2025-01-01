@@ -182,8 +182,16 @@
     cargo
     nodejs
     pnpm
+    gparted
+    xorg-xhost
+
+    # hyprland extras
     wofi
     tofi
+    waybar
+    hyprpaper
+    font-awesome
+    pavucontrol
   ];
   environment.variables.EDITOR = "vim";
 
