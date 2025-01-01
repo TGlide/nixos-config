@@ -39,6 +39,19 @@
         unitConfig.DefaultDependencies = "no";
       };
     };
+    user.services.polkit-gnome-authentication-agent-1 = {
+      description = "polkit-gnome-authentication-agent-1";
+      wantedBy = ["graphical-session.target"];
+      wants = ["graphical-session.target"];
+      after = ["graphical-session.target"];
+      serviceConfig = {
+        Type = "simple";
+        ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+        Restart = "on-failure";
+        RestartSec = 1;
+        TimeoutStopSec = 10;
+      };
+    };
   };
 
   networking.hostName = "nixos"; # Define your hostname.
@@ -167,6 +180,8 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
+  security.polkit.enable = true;
+
   nix.settings.experimental-features = ["nix-command" "flakes"];
   # List packages installed in system profile. To search, run:
   # $ nix search wget
@@ -183,7 +198,6 @@
     nodejs
     pnpm
     gparted
-    xorg-xhost
 
     # hyprland extras
     wofi
