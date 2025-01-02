@@ -209,6 +209,7 @@
     waybar
     hyprpaper
     hyprlock
+    hypridle
     font-awesome
     pavucontrol
   ];
