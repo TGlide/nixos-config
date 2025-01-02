@@ -199,26 +199,24 @@
     pnpm
     gparted
     blueman
+    vial
+    via
+    chromium
 
     # hyprland extras
     wofi
     tofi
     waybar
     hyprpaper
+    hyprlock
     font-awesome
     pavucontrol
   ];
   environment.variables.EDITOR = "vim";
 
-  services.udev = {
-    packages = with pkgs; [
-      qmk
-      qmk-udev-rules
-      qmk_hid
-      vial
-      via
-    ];
-  };
+  hardware.keyboard.qmk.enable = true;
+  services.udev.packages = [pkgs.via];
+  services.udev.extraRules = ''KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"'';
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
