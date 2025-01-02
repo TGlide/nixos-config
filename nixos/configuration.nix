@@ -198,6 +198,7 @@
     nodejs
     pnpm
     gparted
+    blueman
 
     # hyprland extras
     wofi
@@ -208,6 +209,16 @@
     pavucontrol
   ];
   environment.variables.EDITOR = "vim";
+
+  services.udev = {
+    packages = with pkgs; [
+      qmk
+      qmk-udev-rules
+      qmk_hid
+      vial
+      via
+    ];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
