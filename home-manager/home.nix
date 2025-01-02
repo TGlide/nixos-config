@@ -166,6 +166,19 @@
   };
   programs.kitty = lib.mkForce {
     enable = true;
+    themeFile = "Catppuccin-Macchiato";
+    settings = {
+      tab_bar_min_tabs = 1;
+      tab_bar_edge = "bottom";
+      # tab_title_template = "{title}{' :{}:'.format(num_windows) if num_windows > 1 else ''}";
+      tab_bar_margin_width = "0.0";
+      tab_bar_margin_height = "0.0 0.0";
+      tab_bar_style = "powerline";
+      tab_bar_align = "left";
+      tab_separator = "";
+      tab_activity_sybol = "none";
+      tab_title_template = "{index}  {tab.active_wd.rsplit('/', 1)[-1]}";
+    };
   };
 
   # This value determines the home Manager release that your
