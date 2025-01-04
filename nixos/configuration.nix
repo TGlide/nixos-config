@@ -215,6 +215,8 @@
     swaynotificationcenter
     playerctl
   ];
+  programs.nix-ld.enable = true;
+
   environment.variables.EDITOR = "vim";
 
   hardware.keyboard.qmk.enable = true;

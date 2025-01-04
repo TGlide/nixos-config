@@ -139,7 +139,8 @@
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
-      set fish_greeting # Disable greeting
+         set fish_greeting # Disable greeting
+         export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD ')
       neofetch
     '';
     plugins = [
@@ -182,6 +183,12 @@
       tab_title_template = "{index}  {tab.active_wd.rsplit('/', 1)[-1]}";
     };
   };
+
+  # Run script on home-manager activation
+  home.activation = lib.hm.dag.entryAfter ["writeBoundary"] ''
+    run ln -s $VERBOSE_ARG \
+        chezmoi init tglide && chezmoi apply --force
+  '';
 
   # This value determines the home Manager release that your
   # configuration is compatible with. This helps avoid breakage
