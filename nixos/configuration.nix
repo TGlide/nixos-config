@@ -201,7 +201,6 @@
     blueman
     vial
     via
-    chromium
 
     # hyprland extras
     wofi
