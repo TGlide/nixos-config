@@ -37,6 +37,7 @@
     neovim
     alejandra
     lazygit
+    chezmoi
 
     # programming langs
     libgcc
@@ -111,7 +112,8 @@
   programs.git = {
     enable = true;
     userName = "Thomas G. Lopes";
-    userEmail = "thomasgl@pm.me";
+    # userEmail = "thomasgl@pm.me";
+    userEmail = "26071571+TGlide@users.noreply.github.com";
     extraConfig = {
       init = {
         defaultBranch = "main";

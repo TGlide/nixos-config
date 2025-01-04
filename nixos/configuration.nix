@@ -210,8 +210,11 @@
     hyprpaper
     hyprlock
     hypridle
+    hyprshot
     font-awesome
     pavucontrol
+    swaynotificationcenter
+    playerctl
   ];
   environment.variables.EDITOR = "vim";
 
