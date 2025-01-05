@@ -204,6 +204,7 @@
     inxi
     ripgrep
     fd
+    bitwarden-cli
 
     # LSPs
     lua-language-server
