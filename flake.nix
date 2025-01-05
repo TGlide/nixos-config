@@ -23,6 +23,8 @@
     };
 
     hyprland.url = "github:hyprwm/Hyprland";
+
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
   outputs = {
@@ -30,7 +32,8 @@
     nixpkgs,
     home-manager,
     ghostty,
-    hyprland,
+    # hyprland,
+    hyprpanel,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -46,7 +49,7 @@
 
           # Overlays
           {
-            nixpkgs.overlays = import ./overlays;
+            nixpkgs.overlays = [hyprpanel.overlay] ++ import ./overlays;
           }
 
           # make home-manager as a module of nixos

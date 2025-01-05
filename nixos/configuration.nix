@@ -207,6 +207,7 @@
     bitwarden-cli
     bitwarden-desktop
     rbw
+    pinentry
 
     # LSPs
     lua-language-server
@@ -217,9 +218,9 @@
     stylua
 
     # hyprland extras
-    wofi
-    tofi
-    waybar
+    # wofi
+    # tofi
+    # waybar
     hyprpaper
     hyprlock
     hypridle
@@ -228,8 +229,24 @@
     pavucontrol
     swaynotificationcenter
     playerctl
+    # hyprpanel
+    fuzzel
   ];
   # programs.nix-ld.enable = true;
+
+  fonts.enableDefaultPackages = true;
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
+    liberation_ttf
+    fira-code
+    fira-code-symbols
+    mplus-outline-fonts.githubRelease
+    dina-font
+    proggyfonts
+    nerdfonts
+  ];
 
   environment.variables.EDITOR = "vim";
 
