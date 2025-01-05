@@ -205,6 +205,7 @@
     ripgrep
     fd
     bitwarden-cli
+    bitwarden-desktop
 
     # LSPs
     lua-language-server
