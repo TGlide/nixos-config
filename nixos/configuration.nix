@@ -218,7 +218,7 @@
     stylua
 
     # hyprland extras
-    # wofi
+    wofi
     # tofi
     # waybar
     hyprpaper
