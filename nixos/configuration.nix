@@ -202,12 +202,15 @@
     vial
     via
     inxi
+    ripgrep
+    fd
 
     # LSPs
     lua-language-server
     typescript
     typescript-language-server
     svelte-language-server
+    nixd
     stylua
 
     # hyprland extras

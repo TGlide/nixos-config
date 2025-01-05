@@ -16,6 +16,7 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    textfox.url = "github:adriankarlen/textfox";
 
     ghostty = {
       url = "github:ghostty-org/ghostty";
@@ -59,7 +60,7 @@
 
             home-manager.backupFileExtension = "backup";
 
-            # Optionally, use home-manager.extraSpecialArgs to pass arguments to home.nix
+            home-manager.extraSpecialArgs = {inherit inputs;};
           }
 
           # Add Ghostty as a system package

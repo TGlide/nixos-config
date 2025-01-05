@@ -2,6 +2,7 @@
   _config,
   pkgs,
   lib,
+  inputs,
   ...
 }: {
   home.username = "thomasgl";
@@ -105,6 +106,7 @@
 
     # fun
     spotify
+    spotify-player
     vesktop
   ];
 
@@ -167,6 +169,7 @@
       '';
     };
   };
+
   programs.kitty = lib.mkForce {
     enable = true;
     themeFile = "Catppuccin-Macchiato";
@@ -181,6 +184,16 @@
       tab_separator = "";
       tab_activity_sybol = "none";
       tab_title_template = "{index}  {tab.active_wd.rsplit('/', 1)[-1]}";
+    };
+  };
+
+  imports = [inputs.textfox.homeManagerModules.default];
+
+  textfox = {
+    enable = true;
+    profile = "textfox profile";
+    config = {
+      # Optional config
     };
   };
 
