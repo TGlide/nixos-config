@@ -168,6 +168,7 @@
         nvim /etc/nixos
         sudo chown -R root /etc/nixos
       '';
+      bw_unlock = ''export BW_SESSION=$( bw unlock --raw )'';
     };
   };
 
