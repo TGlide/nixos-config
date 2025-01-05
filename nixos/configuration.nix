@@ -201,6 +201,14 @@
     blueman
     vial
     via
+    inxi
+
+    # LSPs
+    lua-language-server
+    typescript
+    typescript-language-server
+    svelte-language-server
+    stylua
 
     # hyprland extras
     wofi
@@ -215,7 +223,7 @@
     swaynotificationcenter
     playerctl
   ];
-  programs.nix-ld.enable = true;
+  # programs.nix-ld.enable = true;
 
   environment.variables.EDITOR = "vim";
 
