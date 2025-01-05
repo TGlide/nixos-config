@@ -159,6 +159,7 @@
     ];
     shellAliases = {
       nv = "nvim";
+      che = "chezmoi";
     };
     functions = {
       modify_nixos = ''
