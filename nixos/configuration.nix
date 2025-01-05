@@ -206,6 +206,7 @@
     fd
     bitwarden-cli
     bitwarden-desktop
+    rbw
 
     # LSPs
     lua-language-server
