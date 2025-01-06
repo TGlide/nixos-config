@@ -208,6 +208,7 @@
     bitwarden-desktop
     rbw
     pinentry
+    efibootmgr
 
     # LSPs
     lua-language-server
