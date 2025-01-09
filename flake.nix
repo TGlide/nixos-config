@@ -16,6 +16,17 @@
       # to avoid problems caused by different versions of nixpkgs.
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    # this is a quick util a good GitHub samaritan wrote to solve for
+    # https://github.com/nix-community/home-manager/issues/1341#issuecomment-1791545015
+    mac-app-util = {
+      url = "github:hraban/mac-app-util";
+    };
+
     textfox.url = "github:adriankarlen/textfox";
 
     ghostty = {
@@ -32,15 +43,18 @@
     nixpkgs,
     home-manager,
     ghostty,
-    # hyprland,
     hyprpanel,
+    nix-darwin,
     ...
   } @ inputs: let
     inherit (self) outputs;
+    x86_64-darwin = "x86_64-darwin";
+    x86_64-linux = "x86_64-linux";
+    aarch64-darwin = "aarch64-darwin"; # For Apple Silicon Macs
   in {
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
-        system = "x86_64-linux";
+        system = x86_64-linux;
         specialArgs = {inherit inputs outputs;};
         modules = [
           # Import the previous configuration.nix we used,
@@ -58,11 +72,8 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-
             home-manager.users.thomasgl = import ./home-manager/home.nix;
-
             home-manager.backupFileExtension = "backup";
-
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
 
@@ -72,6 +83,32 @@
               ghostty.packages.x86_64-linux.default
             ];
           }
+        ];
+      };
+    };
+
+    darwinConfigurations = {
+      float = nix-darwin.lib.darwinSystem {
+        system = aarch64-darwin;
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # Your darwin configuration
+          # ./darwin/configuration.nix
+          # Home-manager darwin module
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.thomasgl = import ./home-manager/home.nix;
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = {inherit inputs;};
+          }
+          # Add Ghostty as a system package
+          # {
+          #   environment.systemPackages = [
+          #     ghostty.packages.aarch64-darwin.default # or x86_64-darwin for Intel
+          #   ];
+          # }
         ];
       };
     };
