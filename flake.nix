@@ -75,20 +75,5 @@
         ];
       };
     };
-
-    # homeConfigurations = {
-    #   "thomasgl@nixos" = home-manager.lib.homeManagerConfiguration {
-    #     modules = [
-    #       {
-    #         wayland.windowManager.hyprland = {
-    #           enable = true;
-    #           # set the flake package
-    #           package = inputs.hyprland.packages.${nixpkgs.legacyPackages.x86_64-linux.stdenv.hostPlatform.system}.hyprland;
-    #         };
-    #       }
-    #       # ...
-    #     ];
-    #   };
-    # };
   };
 }
