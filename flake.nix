@@ -98,7 +98,7 @@
         specialArgs = {inherit inputs outputs;};
         modules = [
           # Your darwin configuration
-          # ./darwin/configuration.nix
+          ./darwin/configuration.nix
           # Home-manager darwin module
           home-manager.darwinModules.home-manager
           {
@@ -107,7 +107,7 @@
             home-manager.users.thomasglopes = {
               imports = [
                 ./home-manager/shared.nix
-                ./home-manager/nixos.nix
+									./home-manager/darwin.nix
               ];
             };
             home-manager.backupFileExtension = "backup";

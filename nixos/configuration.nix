@@ -220,7 +220,7 @@
     fd
     bitwarden-cli
     bitwarden-desktop
-    rbw
+    # rbw
     pinentry
     efibootmgr
 
