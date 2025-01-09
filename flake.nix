@@ -72,7 +72,12 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.thomasgl = import ./home-manager/home.nix;
+            home-manager.users.thomasgl = {
+              imports = [
+                ./home-manager/shared.nix
+                ./home-manager/nixos.nix
+              ];
+            };
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
@@ -99,7 +104,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.thomasgl = import ./home-manager/home.nix;
+            home-manager.users.thomasgl = import ./home-manager/shared.nix;
             home-manager.backupFileExtension = "backup";
             home-manager.extraSpecialArgs = {inherit inputs;};
           }
