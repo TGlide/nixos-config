@@ -235,7 +235,7 @@
     # hyprland extras
     wofi
     # tofi
-    # waybar
+    waybar
     hyprpaper
     hyprlock
     hypridle
