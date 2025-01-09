@@ -13,9 +13,23 @@
   ];
 
   # Bootloader
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.systemd-boot.configurationLimit = 20;
+  boot.loader = {
+    timeout = 30;
+    systemd-boot = {
+      enable = true;
+      configurationLimit = 5;
+    };
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot";
+    };
+  };
+
+  fileSystems."/boot" = {
+    device = "/dev/disk/by-uuid/6C0B-277F";
+    fsType = "vfat";
+    options = ["defaults"];
+  };
 
   powerManagement.enable = false;
 
