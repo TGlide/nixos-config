@@ -82,12 +82,6 @@
       che = "chezmoi";
     };
     functions = {
-      modify_nixos = ''
-        cd /etc/nixos
-        sudo chown -R thomasgl /etc/nixos
-        nvim /etc/nixos
-        sudo chown -R root /etc/nixos
-      '';
       bw-unlock = ''set -Ux BW_SESSION (bw unlock --raw || echo "Error unlocking BW")'';
       bw-create-note = ''
         function bw-create-note --argument-names 'content_or_name' 'name'

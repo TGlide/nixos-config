@@ -87,4 +87,13 @@
       # Optional config
     };
   };
+
+  programs.fish.functions = {
+    modify_nixos = ''
+      cd /etc/nixos
+      sudo chown -R thomasgl /etc/nixos
+      nvim /etc/nixos
+      sudo chown -R root /etc/nixos
+    '';
+  };
 }
