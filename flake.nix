@@ -48,7 +48,7 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
-    x86_64-darwin = "x86_64-darwin";
+    # x86_64-darwin = "x86_64-darwin";
     x86_64-linux = "x86_64-linux";
     aarch64-darwin = "aarch64-darwin"; # For Apple Silicon Macs
   in {
@@ -107,7 +107,7 @@
             home-manager.users.thomasglopes = {
               imports = [
                 ./home-manager/shared.nix
-									./home-manager/darwin.nix
+                ./home-manager/darwin.nix
               ];
             };
             home-manager.backupFileExtension = "backup";

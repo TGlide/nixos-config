@@ -4,13 +4,15 @@
   inputs,
   ...
 }: {
+	programs.fish.enable = true;
+  environment.shells = [ pkgs.fish ];
 
-  networking.networkmanager.enable = true;
+  # Set fish as default shell using activation script
+  system.activationScripts.postActivation.text = ''
+    echo "setting default shell to fish"
+    sudo chsh -s ${pkgs.fish}/bin/fish thomasglopes
+  '';
 
-  # Set your time zone.
-  time.timeZone = "Europe/Lisbon";
-
-  programs.fish.enable = true;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;

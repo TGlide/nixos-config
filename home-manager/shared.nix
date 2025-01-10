@@ -1,14 +1,14 @@
 {
   pkgs,
   lib,
-  inputs,
+  # inputs,
   ...
 }: {
   home.packages = with pkgs; [
     neofetch
     nnn # terminal file manager
 
-		# secrets
+    # secrets
     rbw
 
     # dev tools
@@ -16,6 +16,14 @@
     alejandra
     lazygit
     chezmoi
+
+    # LSPs
+    lua-language-server
+    typescript
+    typescript-language-server
+    svelte-language-server
+    nixd
+    stylua
 
     # fun
     spotify-player
