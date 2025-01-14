@@ -78,7 +78,9 @@
     nix-output-monitor
   ];
 
-  imports = [inputs.textfox.homeManagerModules.default];
+  imports = [
+    inputs.textfox.homeManagerModules.default
+  ];
 
   textfox = {
     enable = true;

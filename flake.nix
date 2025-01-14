@@ -36,6 +36,15 @@
     hyprland.url = "github:hyprwm/Hyprland";
 
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+
+    astal = {
+      url = "github:aylur/astal";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = {
@@ -45,13 +54,28 @@
     ghostty,
     hyprpanel,
     nix-darwin,
+    ags,
     ...
   } @ inputs: let
     inherit (self) outputs;
-    # x86_64-darwin = "x86_64-darwin";
     x86_64-linux = "x86_64-linux";
     aarch64-darwin = "aarch64-darwin"; # For Apple Silicon Macs
+    x86_64-linux-pkgs = nixpkgs.legacyPackages.${x86_64-linux};
   in {
+    packages.${x86_64-linux}.default = ags.lib.bundle {
+      inherit x86_64-linux-pkgs;
+      src = ./.;
+      name = "my-shell"; # name of executable
+      entry = "app.ts";
+      gtk4 = false;
+
+      # additional libraries and executables to add to gjs' runtime
+      extraPackages = [
+        # ags.packages.${system}.battery
+        # pkgs.fzf
+      ];
+    };
+
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = x86_64-linux;

@@ -4,6 +4,27 @@
       "inputs": {
         "astal": "astal",
         "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1736677288,
+        "narHash": "sha256-Vj3WOLy6o6Zf44Rwg9eLqNRQPlVoDrQ89tsef3l3990=",
+        "owner": "aylur",
+        "repo": "ags",
+        "rev": "90db9b9fecc0f4228440d83107c6c745a35e7d77",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aylur",
+        "repo": "ags",
+        "type": "github"
+      }
+    },
+    "ags_2": {
+      "inputs": {
+        "astal": "astal_3",
+        "nixpkgs": [
           "hyprpanel",
           "nixpkgs"
         ]
@@ -56,6 +77,47 @@
       }
     },
     "astal": {
+      "inputs": {
+        "nixpkgs": [
+          "ags",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1735172721,
+        "narHash": "sha256-rtEAwGsHSppnkR3Qg3eRJ6Xh/F84IY9CrBBLzYabalY=",
+        "owner": "aylur",
+        "repo": "astal",
+        "rev": "6c84b64efc736e039a8a10774a4a1bf772c37aa2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aylur",
+        "repo": "astal",
+        "type": "github"
+      }
+    },
+    "astal_2": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1736755985,
+        "narHash": "sha256-kNtKWbQ+gMzmAF7KNSZ4Hb8/2cfSNoURCyRSB0nx2I4=",
+        "owner": "aylur",
+        "repo": "astal",
+        "rev": "cac0fc63bfe098b26753db8262f5d95ac42b281b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "aylur",
+        "repo": "astal",
+        "type": "github"
+      }
+    },
+    "astal_3": {
       "inputs": {
         "nixpkgs": [
           "hyprpanel",
@@ -470,7 +532,7 @@
     },
     "hyprpanel": {
       "inputs": {
-        "ags": "ags",
+        "ags": "ags_2",
         "nixpkgs": "nixpkgs_3"
       },
       "locked": {
@@ -764,6 +826,8 @@
     },
     "root": {
       "inputs": {
+        "ags": "ags",
+        "astal": "astal_2",
         "ghostty": "ghostty",
         "helix": "helix",
         "home-manager": "home-manager",

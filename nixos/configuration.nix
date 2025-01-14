@@ -238,6 +238,7 @@
     swaynotificationcenter
     playerctl
     pipewire
+    inputs.astal.packages.x86_64-linux.default
   ];
   # programs.nix-ld.enable = true;
 
