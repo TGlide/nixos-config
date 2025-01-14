@@ -68,11 +68,11 @@
     plugins = [
       {
         name = "fzf";
-        src = pkgs.fishPlugins.fzf;
+        src = pkgs.fishPlugins.fzf.src;
       }
       {
         name = "z";
-        src = pkgs.fishPlugins.z;
+        src = pkgs.fishPlugins.z.src;
       }
     ];
     shellAliases = {
