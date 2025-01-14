@@ -223,10 +223,11 @@
     # rbw
     pinentry
     efibootmgr
+    gtop
 
     # hyprland extras
     wofi
-    # tofi
+    wofi-emoji
     waybar
     hyprpaper
     hyprlock
@@ -236,8 +237,7 @@
     pavucontrol
     swaynotificationcenter
     playerctl
-    # hyprpanel
-    fuzzel
+    pipewire
   ];
   # programs.nix-ld.enable = true;
 
