@@ -59,23 +59,18 @@
   } @ inputs: let
     inherit (self) outputs;
     x86_64-linux = "x86_64-linux";
-    aarch64-darwin = "aarch64-darwin"; # For Apple Silicon Macs
     x86_64-linux-pkgs = nixpkgs.legacyPackages.${x86_64-linux};
+    aarch64-darwin = "aarch64-darwin"; # For Apple Silicon Macs
   in {
-    packages.${x86_64-linux}.default = ags.lib.bundle {
-      inherit x86_64-linux-pkgs;
-      src = ./.;
-      name = "my-shell"; # name of executable
+    # Define the package here first
+    packages.${x86_64-linux}.denki-shell = ags.lib.bundle {
+      pkgs = x86_64-linux-pkgs;
+      src = ./ags;
+      name = "denki-shell";
       entry = "app.ts";
       gtk4 = false;
-
-      # additional libraries and executables to add to gjs' runtime
-      extraPackages = [
-        # ags.packages.${system}.battery
-        # pkgs.fzf
-      ];
+      extraPackages = [];
     };
-
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = x86_64-linux;
@@ -110,6 +105,7 @@
           {
             environment.systemPackages = [
               ghostty.packages.x86_64-linux.default
+              self.packages.${x86_64-linux}.denki-shell # Reference it here
             ];
           }
         ];
