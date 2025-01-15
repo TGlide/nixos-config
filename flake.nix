@@ -62,7 +62,6 @@
     x86_64-linux-pkgs = nixpkgs.legacyPackages.${x86_64-linux};
     aarch64-darwin = "aarch64-darwin"; # For Apple Silicon Macs
   in {
-    # Define the package here first
     packages.${x86_64-linux}.denki-shell = ags.lib.bundle {
       pkgs = x86_64-linux-pkgs;
       src = ./ags;

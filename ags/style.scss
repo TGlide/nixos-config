@@ -1,6 +1,6 @@
 // https://gitlab.gnome.org/GNOME/gtk/-/blob/gtk-3-24/gtk/theme/Adwaita/_colors-public.scss
 $fg-color: #{"@theme_fg_color"};
-$bg-color: #{"@theme_bg_color"};
+$bg-color: #ffffff88;
 
 window.Bar {
     background: transparent;
@@ -14,7 +14,7 @@ window.Bar {
     }
 
     button {
-        border-radius: 8px;
+        border-radius: 0px;
         margin: 2px;
     }
 }

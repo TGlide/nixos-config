@@ -91,6 +91,12 @@
   };
 
   programs.fish.functions = {
+    modify_ags = ''
+      cd /etc/nixos/ags
+      sudo chown -R thomasgl /etc/nixos/ags
+      nvim /etc/nixos/ags
+      sudo chown -R root /etc/nixos/ags
+    '';
     modify_nixos = ''
       cd /etc/nixos
       sudo chown -R thomasgl /etc/nixos
