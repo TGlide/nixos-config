@@ -212,6 +212,7 @@
     # rbw
     pinentry
     efibootmgr
+    obs-studio
 
     # terminal utils
     nerdfetch
