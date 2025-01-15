@@ -227,6 +227,7 @@
     cargo
     nodejs
     pnpm
+    nodePackages."@antfu/ni"
 
     # hyprland extras
     wofi
@@ -256,6 +257,7 @@
     dina-font
     proggyfonts
     nerdfonts
+    cozette
   ];
 
   environment.variables.EDITOR = "vim";
