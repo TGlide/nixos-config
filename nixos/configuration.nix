@@ -200,7 +200,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wl-clipboard
+    # general
     gparted
     blueman
     vial
@@ -213,6 +213,7 @@
     pinentry
     efibootmgr
     obs-studio
+    mpv
 
     # terminal utils
     nerdfetch
@@ -236,6 +237,7 @@
     nodePackages."@antfu/ni"
     kitty
     alacritty
+    wl-clipboard
 
     # ricing
     cbonsai
