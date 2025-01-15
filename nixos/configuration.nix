@@ -220,8 +220,10 @@
     ripgrep
     wget
     pciutils
+    fontpreview
 
     # developer tools
+    gh
     git
     vim
     inputs.helix.packages."${pkgs.system}".helix
@@ -231,6 +233,14 @@
     nodejs
     pnpm
     nodePackages."@antfu/ni"
+    kitty
+    alacritty
+
+    # ricing
+    cbonsai
+    cmatrix
+    tty-clock
+    pipes-rs
 
     # hyprland extras
     wofi
