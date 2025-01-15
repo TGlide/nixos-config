@@ -200,23 +200,26 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
-    wget
-    pciutils
     wl-clipboard
     gparted
     blueman
     vial
     via
     inxi
-    ripgrep
     fd
     bitwarden-cli
     bitwarden-desktop
     # rbw
     pinentry
     efibootmgr
+
+    # terminal utils
+    nerdfetch
     gtop
     entr
+    ripgrep
+    wget
+    pciutils
 
     # developer tools
     git
