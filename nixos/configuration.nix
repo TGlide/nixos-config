@@ -238,6 +238,7 @@
     kitty
     alacritty
     wl-clipboard
+    aider-chat
 
     # ricing
     cbonsai
