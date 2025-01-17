@@ -1,9 +1,4 @@
-{
-  pkgs,
-  lib,
-  # inputs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     neofetch
     nnn # terminal file manager
@@ -30,6 +25,7 @@
     # fun
     spotify-player
     vesktop
+    steam
   ];
 
   # basic configuration of git, please change to your own
