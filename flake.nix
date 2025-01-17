@@ -18,7 +18,7 @@
     };
 
     nix-darwin = {
-      url = "github:LnL7/nix-darwin";
+      url = "github:LnL7/nix-darwin/nix-darwin-24.11";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     # this is a quick util a good GitHub samaritan wrote to solve for

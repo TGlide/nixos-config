@@ -225,7 +225,6 @@
     mpv
 
     # terminal utils
-    nerdfetch
     gtop
     entr
     ripgrep

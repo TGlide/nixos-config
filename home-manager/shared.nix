@@ -12,6 +12,9 @@
     lazygit
     chezmoi
 
+    # terminal tools
+    nerdfetch
+
     # LSPs
     lua-language-server
     typescript
