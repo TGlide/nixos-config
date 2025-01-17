@@ -216,10 +216,8 @@
     via
     inxi
     fd
-    bitwarden-cli
     bitwarden-desktop
-    # rbw
-    pinentry
+    bitwarden-cli
     efibootmgr
     obs-studio
     mpv
@@ -227,7 +225,6 @@
     # terminal utils
     gtop
     entr
-    ripgrep
     wget
     pciutils
     fontpreview
@@ -243,7 +240,6 @@
     nodejs
     pnpm
     nodePackages."@antfu/ni"
-    kitty
     alacritty
     wl-clipboard
     aider-chat
