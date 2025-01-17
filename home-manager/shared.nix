@@ -25,7 +25,6 @@
     # fun
     spotify-player
     vesktop
-    steam
   ];
 
   # basic configuration of git, please change to your own
