@@ -71,6 +71,9 @@
     # productivity
     obsidian
 
+    # dev tools
+    vscode
+
     # nix related
     #
     # it provides the command `nom` works just like `nix`

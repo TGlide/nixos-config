@@ -243,6 +243,7 @@
     alacritty
     wl-clipboard
     aider-chat
+    prefetch-npm-deps
 
     # ricing
     cbonsai
