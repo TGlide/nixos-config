@@ -7,7 +7,10 @@
   home.username = lib.mkForce "thomasglopes";
   home.homeDirectory = lib.mkForce "/Users/thomasglopes";
 
-  home.packages = with pkgs; [];
+  home.packages = with pkgs; [
+    # LSPs
+    tailwindcss-language-server
+  ];
 
   programs.fish.functions = {
     modify_nix = ''

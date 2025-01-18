@@ -23,7 +23,7 @@
     typescript-language-server
     svelte-language-server
     tailwindcss
-    tailwindcss-language-server
+    # tailwindcss-language-server
     nixd
     stylua
 

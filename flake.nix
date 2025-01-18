@@ -105,6 +105,11 @@
             environment.systemPackages = [
               ghostty.packages.x86_64-linux.default
               self.packages.${x86_64-linux}.denki-shell # Reference it here
+              (x86_64-linux-pkgs.callPackage ./packages/tailwind-language-server.nix {
+                pnpm = x86_64-linux-pkgs.pnpm_9;
+                fetchFromGitHub = x86_64-linux-pkgs.fetchFromGitHub;
+                nodejs = x86_64-linux-pkgs.nodejs;
+              })
             ];
           }
         ];
