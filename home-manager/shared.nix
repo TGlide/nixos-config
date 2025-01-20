@@ -16,6 +16,7 @@
     # terminal tools
     nerdfetch
     ripgrep
+    eza
 
     # LSPs
     lua-language-server
