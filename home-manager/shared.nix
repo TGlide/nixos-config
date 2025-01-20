@@ -83,6 +83,25 @@
     shellAliases = {
       nv = "nvim";
       che = "chezmoi";
+      gcho = "git checkout";
+      gchm = "git checkout main";
+      gchd = "git checkout develop";
+      gs = "git status";
+      gp = "git push";
+      gpuoh = "git push --set-upstream origin HEAD";
+      gl = "git pull";
+      gcnv = "git commit --no-verify";
+      gca = "git commit --amend";
+      gb = "git branch";
+      gr = "git remote";
+      grv = "git remote -v";
+      grr = "git remote remove";
+      gra = "git remote add";
+      gm = "git merge";
+      gd = "git diff";
+      gdc = "git diff --cached";
+      gdt = "git diff-tree --no-commit-id --name-only -r";
+      gf = "git fetch";
     };
     functions = {
       bw-unlock = ''set -Ux BW_SESSION (bw unlock --raw || echo "Error unlocking BW")'';
