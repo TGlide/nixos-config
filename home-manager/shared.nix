@@ -17,6 +17,7 @@
     nerdfetch
     ripgrep
     eza
+    autojump
 
     # LSPs
     lua-language-server
