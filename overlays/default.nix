@@ -3,4 +3,5 @@
   (import ./spotify.nix)
   (import ./bitwarden.nix)
   (import ./obsidian.nix)
+  (import ./vscode.nix)
 ]

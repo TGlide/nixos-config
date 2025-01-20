@@ -17,7 +17,6 @@
     nerdfetch
     ripgrep
     eza
-    autojump
 
     # LSPs
     lua-language-server
@@ -68,6 +67,7 @@
       set fish_greeting # Disable greeting
       export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD ')
       test -f ~/.config/myvars; and source ~/.config/myvars
+      test -f /run/current-system/sw/share/autojump/autojump.fish; and source /run/current-system/sw/share/autojump/autojump.fish
       nerdfetch
     '';
     plugins = [

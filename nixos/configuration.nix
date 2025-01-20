@@ -228,6 +228,7 @@
     wget
     pciutils
     fontpreview
+    autojump
 
     # developer tools
     gh
