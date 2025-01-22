@@ -40,6 +40,7 @@
     # userEmail = "thomasgl@pm.me";
     userEmail = "26071571+TGlide@users.noreply.github.com";
     extraConfig = {
+      pull.rebase = true;
       init = {
         defaultBranch = "main";
       };
