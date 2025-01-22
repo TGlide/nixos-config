@@ -30,6 +30,8 @@
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
+    gpu-screen-recorder
+    gpu-screen-recorder-gtk
 
     # networking tools
     mtr # A network diagnostic tool
