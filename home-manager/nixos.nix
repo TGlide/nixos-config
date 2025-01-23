@@ -30,7 +30,6 @@
     yq-go # yaml processor https://github.com/mikefarah/yq
     eza # A modern replacement for ‘ls’
     fzf # A command-line fuzzy finder
-    simplescreenrecorder
     gpu-screen-recorder
     gpu-screen-recorder-gtk
 

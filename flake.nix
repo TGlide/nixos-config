@@ -68,7 +68,12 @@
       name = "denki-shell";
       entry = "app.ts";
       gtk4 = false;
-      extraPackages = [];
+      extraPackages = [
+        ags.packages.${x86_64-linux}.hyprland
+        ags.packages.${x86_64-linux}.mpris
+        ags.packages.${x86_64-linux}.wireplumber
+        ags.packages.${x86_64-linux}.tray
+      ];
     };
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {

@@ -229,6 +229,7 @@
     pciutils
     fontpreview
     autojump
+    killall
 
     # developer tools
     gh
