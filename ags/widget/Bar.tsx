@@ -4,6 +4,7 @@ import Hyprland from "gi://AstalHyprland"
 import Mpris from "gi://AstalMpris"
 import Wp from "gi://AstalWp"
 import Tray from "gi://AstalTray"
+import NotificationPopups from "../notifications/NotificationsPopup"
 
 function SysTray() {
 	const tray = Tray.get_default()

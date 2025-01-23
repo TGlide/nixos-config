@@ -230,6 +230,7 @@
     fontpreview
     autojump
     killall
+    notify-desktop
 
     # developer tools
     gh
@@ -263,7 +264,7 @@
     hyprshot
     font-awesome
     pavucontrol
-    swaynotificationcenter
+    # swaynotificationcenter
     playerctl
     pipewire
   ];
