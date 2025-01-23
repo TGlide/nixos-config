@@ -73,6 +73,7 @@
         ags.packages.${x86_64-linux}.mpris
         ags.packages.${x86_64-linux}.wireplumber
         ags.packages.${x86_64-linux}.tray
+        ags.packages.${x86_64-linux}.notifd
       ];
     };
     nixosConfigurations = {
