@@ -231,6 +231,7 @@
     autojump
     killall
     notify-desktop
+    ffmpeg
 
     # developer tools
     gh
