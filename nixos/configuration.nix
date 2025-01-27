@@ -221,6 +221,7 @@
     efibootmgr
     obs-studio
     mpv
+    figma-linux
 
     # terminal utils
     gtop
@@ -248,6 +249,7 @@
     wl-clipboard
     aider-chat
     prefetch-npm-deps
+    sl
 
     # ricing
     cbonsai

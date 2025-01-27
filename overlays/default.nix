@@ -4,4 +4,5 @@
   (import ./bitwarden.nix)
   (import ./obsidian.nix)
   (import ./vscode.nix)
+  (import ./figma.nix)
 ]
