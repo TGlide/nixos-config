@@ -76,6 +76,7 @@
 
     # dev tools
     vscode
+    gimp
 
     # nix related
     #
