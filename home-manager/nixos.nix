@@ -77,6 +77,7 @@
     # dev tools
     vscode
     gimp
+    inkscape
 
     # nix related
     #

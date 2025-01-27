@@ -250,6 +250,7 @@
     aider-chat
     prefetch-npm-deps
     sl
+    brotli
 
     # ricing
     cbonsai
