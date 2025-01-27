@@ -76,6 +76,7 @@
 
     # dev tools
     vscode
+    lunacy
 
     # nix related
     #
