@@ -233,6 +233,7 @@
     killall
     notify-desktop
     ffmpeg
+    ngrok
 
     # developer tools
     gh
