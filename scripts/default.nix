@@ -1,19 +1,21 @@
-# In scripts/default.nix:
-{pkgs ? import <nixpkgs> {}}: let
-  # Helper function to create a script derivation
-  mkScript = name: script: pkgs.writeScriptBin name (builtins.readFile script);
-
-  # List all your scripts here
-  scripts = {
-    change-media-output = mkScript "change-media-output" ./change-media-output.sh;
-  };
-in {
-  # Export all scripts
-  inherit scripts;
-
-  # Create a package that includes all scripts
-  allScripts = pkgs.symlinkJoin {
-    name = "custom-scripts";
-    paths = builtins.attrValues scripts;
-  };
+{pkgs ? import <nixpkgs> {}}:
+pkgs.symlinkJoin {
+  name = "custom-scripts";
+  paths = let
+    # Read all files in the current directory
+    files = builtins.readDir ./.;
+    # Filter out default.nix and non-.sh files
+    scriptFiles =
+      builtins.filter
+      (name: builtins.match ".*\\.sh$" name != null)
+      (builtins.attrNames files);
+    # Create a script for each .sh file
+    makeScript = name:
+      pkgs.runCommand name {} ''
+        mkdir -p $out/bin
+        cp ${pkgs.writeScript name (builtins.readFile ./${name})} $out/bin/${builtins.substring 0 (builtins.stringLength name - 3) name}
+        chmod +x $out/bin/*
+      '';
+  in
+    map makeScript scriptFiles;
 }

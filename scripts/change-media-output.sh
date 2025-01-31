@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+echo hi &&
 wpctl status |
     sed -n '/Sinks:/,/Sources:/p' |
     sd '├' '' |
