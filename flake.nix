@@ -4,6 +4,7 @@
   inputs = {
     # NixOS official package source, using the nixos-24.11 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-24.11";
+    nixpkgs-unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     helix.url = "github:helix-editor/helix/master";
 
@@ -50,6 +51,7 @@
   outputs = {
     self,
     nixpkgs,
+    nixpkgs-unstable,
     home-manager,
     ghostty,
     hyprpanel,
@@ -60,7 +62,10 @@
     inherit (self) outputs;
     x86_64-linux = "x86_64-linux";
     x86_64-linux-pkgs = nixpkgs.legacyPackages.${x86_64-linux};
+    x86_64-linux-unstable-pkgs = nixpkgs-unstable.legacyPackages.${x86_64-linux};
+
     aarch64-darwin = "aarch64-darwin"; # For Apple Silicon Macs
+    aarch64-darwin-unstable-pkgs = nixpkgs-unstable.legacyPackages.${aarch64-darwin};
   in {
     packages.${x86_64-linux}.denki-shell = ags.lib.bundle {
       pkgs = x86_64-linux-pkgs;
@@ -76,10 +81,14 @@
         ags.packages.${x86_64-linux}.notifd
       ];
     };
+
     nixosConfigurations = {
       nixos = nixpkgs.lib.nixosSystem {
         system = x86_64-linux;
-        specialArgs = {inherit inputs outputs;};
+        specialArgs = {
+          inherit inputs outputs;
+          unstable = x86_64-linux-unstable-pkgs;
+        };
         modules = [
           # Import the previous configuration.nix we used,
           # so the old configuration file still takes effect
@@ -103,7 +112,10 @@
               ];
             };
             home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = {inherit inputs;};
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              unstable = x86_64-linux-unstable-pkgs;
+            };
           }
 
           # Add Ghostty as a system package
@@ -141,7 +153,10 @@
               ];
             };
             home-manager.backupFileExtension = "backup";
-            home-manager.extraSpecialArgs = {inherit inputs;};
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              unstable = aarch64-darwin-unstable-pkgs;
+            };
           }
           # Add Ghostty as a system package
           # {

@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  unstable,
+  ...
+}: {
   home.packages = with pkgs; [
     neofetch
     nnn # terminal file manager
@@ -12,6 +16,7 @@
     lazygit
     chezmoi
     kitty
+    wezterm
 
     # terminal tools
     nerdfetch
@@ -22,7 +27,7 @@
     lua-language-server
     typescript
     typescript-language-server
-    svelte-language-server
+    unstable.svelte-language-server
     tailwindcss
     # tailwindcss-language-server
     nixd
