@@ -33,13 +33,16 @@
     nixd
     stylua
 
-    callPackage
-    ../packages/tailwind-language-server.nix
-    {
-      pnpm = pnpm_9;
-      fetchFromGitHub = fetchFromGitHub;
-      nodejs = nodejs;
-    }
+    (
+      callPackage
+      ../packages/tailwind-language-server.nix
+      {
+        pnpm = pnpm_9;
+        fetchFromGitHub = fetchFromGitHub;
+        nodejs = nodejs;
+      }
+    )
+    (callPackage ../packages/goose.nix {})
 
     # fun
     spotify-player
