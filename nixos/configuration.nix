@@ -231,7 +231,7 @@
     wget
     pciutils
     fontpreview
-    autojump
+    # autojump
     killall
     notify-desktop
     ffmpeg

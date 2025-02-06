@@ -17,7 +17,7 @@
       nvim
     '';
     rebuild_nix = ''
-      nix run nix-darwin -- switch --flake ~/nixos-config/flake.nix
+      nix run nix-darwin -- switch --flake ~/nixos-config/
     '';
   };
 }
