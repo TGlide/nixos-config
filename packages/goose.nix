@@ -22,7 +22,10 @@ stdenv.mkDerivation rec {
         then "aarch64"
         else "x86_64";
     in "https://github.com/block/goose/releases/download/${version}/goose-${arch}-${platform}.tar.bz2";
-    sha256 = "1gv8g7wzk8vclwvc8id98hbgvc5lav9f0xrpyr1xp041k9jj96mb"; # Add SHA256 hash
+    sha256 =
+      if stdenv.isDarwin
+      then "nd1fLptkvrDj2VheGSPpkExt81EMGBwVbRn/XAxJ9AE="
+      else "1gv8g7wzk8vclwvc8id98hbgvc5lav9f0xrpyr1xp041k9jj96mb";
   };
 
   nativeBuildInputs = lib.optionals stdenv.isLinux [autoPatchelfHook];

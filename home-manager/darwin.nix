@@ -9,7 +9,6 @@
 
   home.packages = with pkgs; [
     # LSPs
-    tailwindcss-language-server
   ];
 
   programs.fish.functions = {
