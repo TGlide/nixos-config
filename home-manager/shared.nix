@@ -23,6 +23,7 @@
     ripgrep
     eza
     autojump
+    fzf # A command-line fuzzy finder
 
     # LSPs
     lua-language-server
