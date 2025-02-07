@@ -25,6 +25,7 @@
     eza
     autojump
     fzf # A command-line fuzzy finder
+    tokei
 
     # LSPs
     lua-language-server
