@@ -17,6 +17,7 @@
     chezmoi
     kitty
     wezterm
+    unstable.bun
 
     # terminal tools
     nerdfetch
