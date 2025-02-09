@@ -245,7 +245,7 @@
     gcc
     clang
     cargo
-    nodejs
+    nodejs_22
     pnpm
     nodePackages."@antfu/ni"
     alacritty
