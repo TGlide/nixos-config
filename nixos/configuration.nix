@@ -224,6 +224,7 @@
     obs-studio
     mpv
     figma-linux
+    steam-tui
 
     # terminal utils
     gtop
