@@ -8,7 +8,8 @@
   home.homeDirectory = lib.mkForce "/Users/thomasglopes";
 
   home.packages = with pkgs; [
-    # LSPs
+    # Terminal tools
+    yazi
   ];
 
   programs.fish.functions = {

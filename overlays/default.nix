@@ -1,5 +1,5 @@
 [
-  (import ./vesktop.nix)
+  # (import ./vesktop.nix)
   (import ./chromium.nix)
   (import ./spotify.nix)
   (import ./bitwarden.nix)
