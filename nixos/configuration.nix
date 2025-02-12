@@ -281,6 +281,7 @@
     # swaynotificationcenter
     playerctl
     pipewire
+    joystickwake
   ];
   # programs.nix-ld.enable = true;
 
