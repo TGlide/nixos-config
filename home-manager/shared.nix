@@ -18,6 +18,9 @@
     kitty
     wezterm
     unstable.bun
+    nodejs_22
+    pnpm
+    yarn
 
     # terminal tools
     nerdfetch
