@@ -251,8 +251,6 @@
     gcc
     clang
     cargo
-    nodejs_22
-    pnpm
     nodePackages."@antfu/ni"
     alacritty
     wl-clipboard
