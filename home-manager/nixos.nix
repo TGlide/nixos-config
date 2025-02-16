@@ -77,6 +77,7 @@
     vscode
     gimp
     inkscape
+    sqlite
 
     # nix related
     #
