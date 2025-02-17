@@ -78,6 +78,7 @@
     gimp
     inkscape
     sqlite
+    (callPackage ../packages/docker-desktop.nix {})
 
     # nix related
     #

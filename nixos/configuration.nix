@@ -177,7 +177,7 @@
   users.users.thomasgl = {
     isNormalUser = true;
     description = "Thomas G. Lopes";
-    extraGroups = ["networkmanager" "wheel"];
+    extraGroups = ["networkmanager" "wheel" "docker"];
     # packages = with pkgs; [
     #   #  thunderbird
     # ];
@@ -259,6 +259,7 @@
     sl
     brotli
     sd
+    docker-client
 
     # ricing
     cbonsai
@@ -282,6 +283,14 @@
     joystickwake
   ];
   # programs.nix-ld.enable = true;
+
+  virtualisation.docker = {
+    enable = true;
+    rootless = {
+      enable = true;
+      setSocketVariable = true;
+    };
+  };
 
   fonts.enableDefaultPackages = true;
   fonts.packages = with pkgs; [
