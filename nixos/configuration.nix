@@ -259,7 +259,7 @@
     sl
     brotli
     sd
-    docker-client
+    colima
 
     # ricing
     cbonsai

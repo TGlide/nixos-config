@@ -18,7 +18,7 @@ stdenv.mkDerivation rec {
   revision = 165256;
 
   src = fetchurl {
-    url = "https://desktop.docker.com/linux/main/amd64/${toString revision}/${pname}-amd64.deb?utm_source=nixpkgs";
+    url = "https://desktop.docker.com/linux/main/amd64/165256/docker-desktop-amd64.deb?utm_source=nixpkgs";
     sha256 = "sha256-qFepUUftBj7GgM2ZIiY8GjhAy16RRPjg2oW1pgbSYYk=";
   };
 
@@ -43,11 +43,24 @@ stdenv.mkDerivation rec {
   '';
 
   installPhase = ''
-    runHook preInstall
+        runHook preInstall
 
-    mkdir -p $out
-    cp -r * $out
+    # Debug: List all files to find the actual binary
+      echo "Contents of package:"
+      find . -type f -executable
 
-    runHook postInstall
+        mkdir -p $out/{bin,lib,share}
+        cp -r usr/* $out/
+        cp -r opt/docker-desktop/* $out/lib/
+
+        # Create wrapper for the main binary
+        makeWrapper $out/lib/docker-desktop $out/bin/docker-desktop \
+          --prefix PATH : $out/bin \
+          --prefix LD_LIBRARY_PATH : $out/lib
+
+        # Ensure the binary is executable
+        chmod +x $out/bin/docker-desktop
+
+        runHook postInstall
   '';
 }

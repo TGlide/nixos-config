@@ -30,10 +30,6 @@
 
     textfox.url = "github:adriankarlen/textfox";
 
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-    };
-
     hyprland.url = "github:hyprwm/Hyprland";
 
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
@@ -53,7 +49,6 @@
     nixpkgs,
     nixpkgs-unstable,
     home-manager,
-    ghostty,
     hyprpanel,
     nix-darwin,
     ags,
@@ -118,10 +113,8 @@
             };
           }
 
-          # Add Ghostty as a system package
           {
             environment.systemPackages = [
-              ghostty.packages.x86_64-linux.default
               self.packages.${x86_64-linux}.denki-shell # Reference it here
             ];
           }
@@ -153,12 +146,6 @@
               unstable = aarch64-darwin-unstable-pkgs;
             };
           }
-          # Add Ghostty as a system package
-          # {
-          #   environment.systemPackages = [
-          #     ghostty.packages.aarch64-darwin.default # or x86_64-darwin for Intel
-          #   ];
-          # }
         ];
       };
     };
