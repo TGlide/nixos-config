@@ -30,6 +30,7 @@
     autojump
     fzf # A command-line fuzzy finder
     tokei
+    tldr
 
     # LSPs
     lua-language-server
