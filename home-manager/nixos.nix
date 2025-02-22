@@ -78,6 +78,7 @@
     gimp
     inkscape
     sqlite
+    unstable.ghostty
 
     # nix related
     #
