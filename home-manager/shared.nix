@@ -21,7 +21,7 @@
     nodejs_22
     pnpm
     yarn
-    unstable.ghostty
+    # unstable.ghostty
 
     # terminal tools
     nerdfetch
