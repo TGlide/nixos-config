@@ -4,6 +4,7 @@
 {
   config,
   pkgs,
+  lib,
   inputs,
   ...
 }: {
@@ -65,6 +66,10 @@
         RestartSec = 1;
         TimeoutStopSec = 10;
       };
+    };
+    services = {
+      systemd-udevd.restartIfChanged = false;
+      # NetworkManager-wait-online.enable = lib.mkForce false;
     };
   };
 

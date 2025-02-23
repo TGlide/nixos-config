@@ -25,7 +25,7 @@ stdenv.mkDerivation rec {
     sha256 =
       if stdenv.isDarwin
       then "nd1fLptkvrDj2VheGSPpkExt81EMGBwVbRn/XAxJ9AE="
-      else "Omsoibo9hLRfASk9R7UjBBLVDbaY3PHcOL/MP9pK8dI=";
+      else "NHvFCEKkGy3kSrMBZu9ufSWU04JpVmnwnmiiwMnEU80=";
   };
 
   nativeBuildInputs = lib.optionals stdenv.isLinux [autoPatchelfHook];
