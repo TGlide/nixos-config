@@ -52,7 +52,7 @@
       }
     )
     (callPackage ../packages/goose.nix {})
-    (callPackage ../packages/claude-code.nix {})
+    (callPackage ../packages/claude-code {})
 
     # fun
     spotify-player
