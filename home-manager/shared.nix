@@ -58,6 +58,8 @@
     spotify-player
     vesktop
     lutris
+    protonup
+    protonup-qt
   ];
 
   # basic configuration of git, please change to your own
