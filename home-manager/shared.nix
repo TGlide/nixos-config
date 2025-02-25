@@ -57,6 +57,7 @@
     # fun
     spotify-player
     vesktop
+    lutris
   ];
 
   # basic configuration of git, please change to your own
