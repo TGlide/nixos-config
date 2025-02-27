@@ -56,6 +56,8 @@
 
     # fun
     spotify-player
+    spotify
+    spicetify-cli
     vesktop
     lutris
     protonup
