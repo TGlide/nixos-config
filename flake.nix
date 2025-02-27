@@ -104,6 +104,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.thomasgl = {
               imports = [
+                inputs.spicetify-nix.homeManagerModules.default
                 ./home-manager/shared.nix
                 ./home-manager/nixos.nix
               ];
@@ -138,6 +139,7 @@
             home-manager.useUserPackages = true;
             home-manager.users.thomasglopes = {
               imports = [
+                inputs.spicetify-nix.homeManagerModules.default
                 ./home-manager/shared.nix
                 ./home-manager/darwin.nix
               ];

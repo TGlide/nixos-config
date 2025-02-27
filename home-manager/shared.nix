@@ -59,7 +59,7 @@ in {
 
     # fun
     spotify-player
-    spotify
+    # spotify
     # spicetify-cli
     vesktop
     lutris
@@ -79,8 +79,8 @@ in {
       skipStats
     ];
     # https://github.com/Gerg-L/spicetify-nix/blob/master/docs/THEMES.md
-    theme = spicePkgs.themes.lucid;
-    # colorScheme = "mocha";
+    theme = spicePkgs.themes.catppuccin;
+    colorScheme = "macchiato";
   };
 
   # basic configuration of git, please change to your own
