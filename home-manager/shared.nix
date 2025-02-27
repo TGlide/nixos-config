@@ -1,8 +1,11 @@
 {
   pkgs,
   unstable,
+  inputs,
   ...
-}: {
+}: let
+  spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
+in {
   home.packages = with pkgs; [
     neofetch
     nnn # terminal file manager
@@ -57,12 +60,28 @@
     # fun
     spotify-player
     spotify
-    spicetify-cli
+    # spicetify-cli
     vesktop
     lutris
     protonup
     protonup-qt
   ];
+
+  programs.spicetify = {
+    enable = true;
+    enabledExtensions = with spicePkgs.extensions; [
+      # https://github.com/Gerg-L/spicetify-nix/blob/master/docs/EXTENSIONS.md
+      # adblockify
+      hidePodcasts
+      shuffle # shuffle+ (special characters are sanitized out of extension names)
+      keyboardshortcut
+      popupLyrics
+      skipStats
+    ];
+    # https://github.com/Gerg-L/spicetify-nix/blob/master/docs/THEMES.md
+    theme = spicePkgs.themes.lucid;
+    # colorScheme = "mocha";
+  };
 
   # basic configuration of git, please change to your own
   programs.git = {
