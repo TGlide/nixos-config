@@ -7,7 +7,7 @@
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "tailwindcss-language-server";
-  version = "0.12.6";
+  version = "0.14.8";
 
   src = fetchFromGitHub {
     owner = "tailwindlabs";

@@ -41,19 +41,19 @@ in {
     typescript-language-server
     unstable.svelte-language-server
     tailwindcss
-    # tailwindcss-language-server
+    unstable.tailwindcss-language-server
     nixd
     stylua
 
-    (
-      callPackage
-      ../packages/tailwind-language-server.nix
-      {
-        pnpm = pnpm_9;
-        fetchFromGitHub = fetchFromGitHub;
-        nodejs = nodejs;
-      }
-    )
+    # (
+    #   callPackage
+    #   ../packages/tailwind-language-server.nix
+    #   {
+    #     pnpm = pnpm_9;
+    #     fetchFromGitHub = fetchFromGitHub;
+    #     nodejs = nodejs;
+    #   }
+    # )
     (callPackage ../packages/goose.nix {})
     (callPackage ../packages/claude-code {})
 
