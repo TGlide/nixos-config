@@ -44,6 +44,13 @@
     };
 
     spicetify-nix.url = "github:Gerg-L/spicetify-nix";
+
+    kolide-launcher = {
+      url = "github:/kolide/nix-agent/main";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    agenix.url = "github:ryantm/agenix";
   };
 
   outputs = {
@@ -87,9 +94,9 @@
           unstable = x86_64-linux-unstable-pkgs;
         };
         modules = [
-          # Import the previous configuration.nix we used,
-          # so the old configuration file still takes effect
           ./nixos/configuration.nix
+
+          inputs.agenix.nixosModules.default
 
           # Overlays
           {
@@ -119,6 +126,7 @@
           {
             environment.systemPackages = [
               self.packages.${x86_64-linux}.denki-shell # Reference it here
+              inputs.agenix.packages.x86_64-linux.default
             ];
           }
         ];

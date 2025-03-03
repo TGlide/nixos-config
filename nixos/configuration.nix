@@ -4,14 +4,23 @@
 {
   config,
   pkgs,
-  lib,
+  # lib,
   inputs,
   ...
 }: {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
+
+    inputs.kolide-launcher.nixosModules.kolide-launcher
   ];
+
+  # assertions = [
+  #   {
+  #     assertion = false;
+  #     message = "Available attributes: ${toString (builtins.attrNames inputs.kolide-launcher.nixosModules)}";
+  #   }
+  # ];
 
   # Bootloader
   boot.loader = {
@@ -313,6 +322,22 @@
   ];
 
   environment.variables.EDITOR = "vim";
+
+  age.identityPaths = ["/home/thomasgl/.ssh/id_ed25519"];
+
+  age.secrets.kolide = {
+    file = ../secrets/kolide.age;
+    # Make it accessible to the appropriate service user
+    owner = "root";
+    group = "root";
+    mode = "0400";
+  };
+  environment.etc."kolide-k2/secret" = {
+    mode = "0600";
+    source = config.age.secrets.kolide.path;
+  };
+
+  services.kolide-launcher.enable = true;
 
   hardware.keyboard.qmk.enable = true;
   services.udev.packages = [pkgs.via];
