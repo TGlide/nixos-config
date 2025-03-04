@@ -6,4 +6,5 @@
   (import ./obsidian.nix)
   (import ./vscode.nix)
   (import ./figma.nix)
+  (import ./slack.nix)
 ]

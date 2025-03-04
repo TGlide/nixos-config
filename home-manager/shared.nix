@@ -65,6 +65,7 @@ in {
     lutris
     protonup
     protonup-qt
+    slack
   ];
 
   programs.spicetify = {
