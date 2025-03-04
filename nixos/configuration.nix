@@ -243,6 +243,7 @@
     mpv
     figma-linux
     steam-tui
+    xmousepasteblock
 
     # terminal utils
     gtop
