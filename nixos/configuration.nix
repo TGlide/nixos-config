@@ -278,7 +278,6 @@
     colima
     unstable.lmstudio
     unstable.ollama-cuda
-    unstable.olla
 
     # ricing
     cbonsai
