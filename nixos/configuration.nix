@@ -277,7 +277,7 @@
     sd
     colima
     unstable.lmstudio
-    unstable.ollama-cuda
+    # unstable.ollama-cuda # damn this takes some time to build
 
     # ricing
     cbonsai
