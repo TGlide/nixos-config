@@ -62,7 +62,6 @@ in {
     # spotify
     # spicetify-cli
     vesktop
-    lutris
     protonup
     protonup-qt
     slack
