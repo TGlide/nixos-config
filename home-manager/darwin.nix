@@ -1,9 +1,11 @@
 {
   pkgs,
   lib,
-  inputs,
   ...
 }: {
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   home.username = lib.mkForce "thomasglopes";
   home.homeDirectory = lib.mkForce "/Users/thomasglopes";
 

@@ -64,11 +64,9 @@
     ...
   } @ inputs: let
     inherit (self) outputs;
+
     x86_64-linux = "x86_64-linux";
-    x86_64-linux-pkgs = import nixpkgs {
-      system = x86_64-linux;
-      config.allowUnfree = true;
-    };
+    x86_64-linux-pkgs = nixpkgs.legacyPackages.${x86_64-linux};
     x86_64-linux-unstable-pkgs = import nixpkgs-unstable {
       system = x86_64-linux;
       config.allowUnfree = true;
@@ -76,7 +74,7 @@
 
     aarch64-darwin = "aarch64-darwin"; # For Apple Silicon Macs
     aarch64-darwin-unstable-pkgs = import nixpkgs-unstable {
-      system = aarch64-darwin-unstable-pkgs;
+      system = x86_64-linux;
       config.allowUnfree = true;
     };
   in {

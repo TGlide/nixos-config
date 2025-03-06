@@ -219,6 +219,9 @@
     };
   };
 
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
+
   security.polkit.enable = true;
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -274,6 +277,8 @@
     sd
     colima
     unstable.lmstudio
+    unstable.ollama-cuda
+    unstable.olla
 
     # ricing
     cbonsai
