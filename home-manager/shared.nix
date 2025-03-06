@@ -100,6 +100,7 @@ in {
         pkgs.git.override {withLibsecret = true;}
       }/bin/git-credential-libsecret";
     };
+    lfs.enable = true;
   };
 
   # starship - an customizable prompt for any shell
