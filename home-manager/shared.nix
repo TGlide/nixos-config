@@ -25,6 +25,7 @@ in {
     pnpm
     yarn
     # unstable.ghostty
+    unstable.git-lfs
 
     # terminal tools
     nerdfetch
@@ -62,8 +63,6 @@ in {
     # spotify
     # spicetify-cli
     vesktop
-    protonup
-    protonup-qt
     slack
   ];
 
@@ -98,7 +97,7 @@ in {
         pkgs.git.override {withLibsecret = true;}
       }/bin/git-credential-libsecret";
     };
-    lfs.enable = true;
+    # lfs.enable = true;
   };
 
   # starship - an customizable prompt for any shell

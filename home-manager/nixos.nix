@@ -82,6 +82,10 @@
     unstable.ghostty
     unstable.lmstudio
 
+    # fun stuff
+    protonup
+    protonup-qt
+
     # nix related
     #
     # it provides the command `nom` works just like `nix`
