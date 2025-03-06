@@ -80,6 +80,7 @@
     inkscape
     sqlite
     unstable.ghostty
+    unstable.lmstudio
 
     # nix related
     #

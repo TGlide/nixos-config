@@ -25,7 +25,6 @@ in {
     pnpm
     yarn
     # unstable.ghostty
-    unstable.lmstudio
 
     # terminal tools
     nerdfetch
