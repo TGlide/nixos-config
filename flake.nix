@@ -71,6 +71,9 @@
     aarch64-darwin = "aarch64-darwin"; # For Apple Silicon Macs
     aarch64-darwin-unstable-pkgs = nixpkgs-unstable.legacyPackages.${aarch64-darwin};
   in {
+    nixpkgs.config.allowUnfree = true;
+    nixpkgs-unstable.config.allowUnfree = true;
+
     packages.${x86_64-linux}.denki-shell = ags.lib.bundle {
       pkgs = x86_64-linux-pkgs;
       src = ./ags;

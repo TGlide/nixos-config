@@ -14,9 +14,6 @@
     "Xft.dpi" = 172;
   };
 
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   # Packages that should be installed to the user profile.
   home.packages = with pkgs; [
     # programming langs

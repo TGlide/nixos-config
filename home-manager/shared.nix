@@ -6,9 +6,6 @@
 }: let
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in {
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
-
   home.packages = with pkgs; [
     neofetch
     nnn # terminal file manager

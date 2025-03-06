@@ -6,6 +6,7 @@
   pkgs,
   # lib,
   inputs,
+  unstable,
   ...
 }: {
   imports = [
@@ -217,9 +218,6 @@
       enable = true;
     };
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   security.polkit.enable = true;
 
