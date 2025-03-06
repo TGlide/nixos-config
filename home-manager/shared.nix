@@ -29,7 +29,6 @@ in {
     yarn
     # unstable.ghostty
     unstable.git-lfs
-    unstable.lmstudio
 
     # terminal tools
     nerdfetch

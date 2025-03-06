@@ -275,6 +275,7 @@
     brotli
     sd
     colima
+    unstable.lmstudio
 
     # ricing
     cbonsai
