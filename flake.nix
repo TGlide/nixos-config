@@ -65,15 +65,21 @@
   } @ inputs: let
     inherit (self) outputs;
     x86_64-linux = "x86_64-linux";
-    x86_64-linux-pkgs = nixpkgs.legacyPackages.${x86_64-linux};
-    x86_64-linux-unstable-pkgs = nixpkgs-unstable.legacyPackages.${x86_64-linux};
+    x86_64-linux-pkgs = import nixpkgs {
+      system = x86_64-linux;
+      config.allowUnfree = true;
+    };
+    x86_64-linux-unstable-pkgs = import nixpkgs-unstable {
+      system = x86_64-linux;
+      config.allowUnfree = true;
+    };
 
     aarch64-darwin = "aarch64-darwin"; # For Apple Silicon Macs
-    aarch64-darwin-unstable-pkgs = nixpkgs-unstable.legacyPackages.${aarch64-darwin};
+    aarch64-darwin-unstable-pkgs = import nixpkgs-unstable {
+      system = aarch64-darwin-unstable-pkgs;
+      config.allowUnfree = true;
+    };
   in {
-    nixpkgs.config.allowUnfree = true;
-    nixpkgs-unstable.config.allowUnfree = true;
-
     packages.${x86_64-linux}.denki-shell = ags.lib.bundle {
       pkgs = x86_64-linux-pkgs;
       src = ./ags;
