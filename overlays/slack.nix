@@ -4,8 +4,9 @@ final: prev: {
     postFixup = ''
       ${oldAttrs.postFixup or ""}
       wrapProgram $out/bin/slack \
-        --add-flags "--enable-features=UseOzonePlatform" \
-        --add-flags "--ozone-platform=wayland"
+        --add-flags "--disable-gpu" \
+        # --add-flags "--enable-features=UseOzonePlatform" \
+        # --add-flags "--ozone-platform=wayland"
     '';
   });
 }
