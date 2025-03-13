@@ -40,7 +40,7 @@ in {
     lua-language-server
     typescript
     typescript-language-server
-    unstable.svelte-language-server
+    # unstable.svelte-language-server
     tailwindcss
     unstable.tailwindcss-language-server
     nixd
@@ -57,6 +57,7 @@ in {
     # )
     (callPackage ../packages/goose.nix {})
     (callPackage ../packages/claude-code {})
+    (callPackage ../packages/svelte-language-server {})
 
     # fun
     spotify-player
