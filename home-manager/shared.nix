@@ -26,6 +26,8 @@ in {
     yarn
     # unstable.ghostty
     unstable.git-lfs
+    (callPackage ../packages/goose.nix {})
+    (callPackage ../packages/claude-code {})
 
     # terminal tools
     nerdfetch
@@ -40,24 +42,12 @@ in {
     lua-language-server
     typescript
     typescript-language-server
-    # unstable.svelte-language-server
+    (callPackage ../packages/svelte-language-server {})
     tailwindcss
     unstable.tailwindcss-language-server
     nixd
     stylua
-
-    # (
-    #   callPackage
-    #   ../packages/tailwind-language-server.nix
-    #   {
-    #     pnpm = pnpm_9;
-    #     fetchFromGitHub = fetchFromGitHub;
-    #     nodejs = nodejs;
-    #   }
-    # )
-    (callPackage ../packages/goose.nix {})
-    (callPackage ../packages/claude-code {})
-    (callPackage ../packages/svelte-language-server {})
+    vscode-langservers-extracted
 
     # fun
     spotify-player
