@@ -80,6 +80,7 @@
     inkscape
     sqlite
     unstable.ghostty
+    unstable.responsively-app
 
     # fun stuff
     protonup
