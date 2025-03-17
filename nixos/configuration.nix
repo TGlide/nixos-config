@@ -303,7 +303,7 @@
   ];
   # programs.nix-ld.enable = true;
 
-  chromium = {
+  nixpkgs.config.chromium = {
     enablePepperFlash = true;
     enableWideVine = true;
   };
