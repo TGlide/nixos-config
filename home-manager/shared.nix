@@ -28,6 +28,8 @@ in {
     unstable.git-lfs
     (callPackage ../packages/goose.nix {})
     (callPackage ../packages/claude-code {})
+    mitmproxy
+    zap
 
     # terminal tools
     nerdfetch
