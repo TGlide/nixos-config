@@ -72,7 +72,6 @@
 
     # productivity
     obsidian
-    chromium
 
     # dev tools
     vscode

@@ -278,6 +278,7 @@
     colima
     unstable.lmstudio
     # unstable.ollama-cuda # damn this takes some time to build
+    unstable.chromium
 
     # ricing
     cbonsai
@@ -301,6 +302,11 @@
     joystickwake
   ];
   # programs.nix-ld.enable = true;
+
+  chromium = {
+    enablePepperFlash = true;
+    enableWideVine = true;
+  };
 
   virtualisation.docker = {
     enable = true;
