@@ -85,6 +85,7 @@
     # fun stuff
     protonup
     protonup-qt
+    unstable.tidal-hifi
 
     # nix related
     #
