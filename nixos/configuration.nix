@@ -278,7 +278,7 @@
     colima
     unstable.lmstudio
     # unstable.ollama-cuda # damn this takes some time to build
-    unstable.chromium
+    chromium
 
     # ricing
     cbonsai
@@ -304,8 +304,9 @@
   # programs.nix-ld.enable = true;
 
   nixpkgs.config.chromium = {
-    enablePepperFlash = true;
+    # enablePepperFlash = true;
     enableWideVine = true;
+    commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
   };
 
   virtualisation.docker = {
@@ -348,6 +349,7 @@
   };
 
   services.kolide-launcher.enable = true;
+  services.tailscale.enable = true;
 
   hardware.keyboard.qmk.enable = true;
   services.udev.packages = [pkgs.via];
