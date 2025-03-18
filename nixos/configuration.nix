@@ -349,7 +349,13 @@
   };
 
   services.kolide-launcher.enable = true;
-  services.tailscale.enable = true;
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "client";
+    extraUpFlags = [
+      "--accept-dns" # Also accept DNS configuration if needed
+    ];
+  };
 
   hardware.keyboard.qmk.enable = true;
   services.udev.packages = [pkgs.via];

@@ -57,6 +57,7 @@ in {
     # spicetify-cli
     vesktop
     slack
+    localsend
   ];
 
   programs.spicetify = {
