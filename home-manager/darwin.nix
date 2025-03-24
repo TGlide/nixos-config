@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  unstable,
   ...
 }: {
   # Allow unfree packages
@@ -12,6 +13,7 @@
   home.packages = with pkgs; [
     # Terminal tools
     yazi
+    unstable.aerospace
   ];
 
   programs.fish.functions = {
