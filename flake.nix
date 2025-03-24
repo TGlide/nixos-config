@@ -74,7 +74,7 @@
 
     aarch64-darwin = "aarch64-darwin"; # For Apple Silicon Macs
     aarch64-darwin-unstable-pkgs = import nixpkgs-unstable {
-      system = x86_64-linux;
+      system = aarch64-darwin;
       config.allowUnfree = true;
     };
   in {
