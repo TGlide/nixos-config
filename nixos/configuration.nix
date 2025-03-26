@@ -277,6 +277,7 @@
     sd
     colima
     unstable.lmstudio
+    unstable.open-webui
     # unstable.ollama-cuda # damn this takes some time to build
     chromium
 
