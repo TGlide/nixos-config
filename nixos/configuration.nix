@@ -362,14 +362,15 @@
   services.udev.packages = [pkgs.via];
   services.udev.extraRules = ''KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"'';
 
-  programs.ssh = {
-    startAgent = true;
-
-    # Automatically add these keys
-    extraConfig = ''
-      AddKeysToAgent yes
-    '';
-  };
+  # programs.ssh = {
+  #   startAgent = true;
+  #   addKeysToAgent = "yes";
+  #
+  #   # Automatically add these keys
+  #   extraConfig = ''
+  #     AddKeysToAgent yes
+  #   '';
+  # };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.

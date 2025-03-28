@@ -106,6 +106,17 @@
     };
   };
 
+  programs.ssh = {
+    enable = true; # Ensures ssh-agent is available and started for the user
+
+    addKeysToAgent = "yes"; # Options: "yes", "no", "confirm", "ask"
+
+    # Optional: Specify identities explicitly
+    # identities = {
+    #   personal = { file = "~/.ssh/id_ed25519"; };
+    # };
+  };
+
   programs.fish.functions = {
     modify_ags = ''
       cd /etc/nixos/ags
