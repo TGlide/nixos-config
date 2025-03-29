@@ -362,15 +362,23 @@
   services.udev.packages = [pkgs.via];
   services.udev.extraRules = ''KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"'';
 
-  # programs.ssh = {
-  #   startAgent = true;
-  #   addKeysToAgent = "yes";
-  #
-  #   # Automatically add these keys
-  #   extraConfig = ''
-  #     AddKeysToAgent yes
-  #   '';
-  # };
+  # In configuration.nix
+  programs.ssh = {
+    startAgent = true;
+    # Optional: Add specific host configurations
+    extraConfig = ''
+      Host vps
+      	HostName 37.221.194.92
+      	User root
+      	IdentityFile ~/.ssh/vps
+
+      Host github.com
+      	HostName github.com
+      	User git
+      	IdentityFile ~/.ssh/github
+      	AddKeysToAgent yes
+    '';
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
