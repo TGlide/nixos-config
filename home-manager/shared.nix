@@ -29,6 +29,7 @@ in {
     (callPackage ../packages/goose.nix {})
     (callPackage ../packages/claude-code {})
     mitmproxy
+    nodePackages."@antfu/ni"
 
     # terminal tools
     nerdfetch
