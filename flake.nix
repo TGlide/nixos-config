@@ -167,6 +167,33 @@
           }
         ];
       };
+
+      s-rank = nix-darwin.lib.darwinSystem {
+        system = aarch64-darwin;
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          # Your darwin configuration
+          ./darwin/configuration.nix
+          # Home-manager darwin module
+          home-manager.darwinModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.thomasglopes = {
+              imports = [
+                inputs.spicetify-nix.homeManagerModules.default
+                ./home-manager/shared.nix
+                ./home-manager/darwin.nix
+              ];
+            };
+            home-manager.backupFileExtension = "backup";
+            home-manager.extraSpecialArgs = {
+              inherit inputs;
+              unstable = aarch64-darwin-unstable-pkgs;
+            };
+          }
+        ];
+      };
     };
   };
 }
