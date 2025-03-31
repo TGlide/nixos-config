@@ -245,6 +245,7 @@
     figma-linux
     steam-tui
     xmousepasteblock
+    inputs.zen-browser.packages."${pkgs.system}".default
 
     # terminal utils
     gtop
