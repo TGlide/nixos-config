@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
     in "https://github.com/block/goose/releases/download/${version}/goose-${arch}-${platform}.tar.bz2";
     sha256 =
       if stdenv.isDarwin
-      then "nd1fLptkvrDj2VheGSPpkExt81EMGBwVbRn/XAxJ9AE="
+      then "sha256-ItdEdHU5Q6L/iJsYtOstBcbkfpvwx7Bfb6vi8w2cfJ4="
       else "NHvFCEKkGy3kSrMBZu9ufSWU04JpVmnwnmiiwMnEU80=";
   };
 
