@@ -280,6 +280,7 @@
     # unstable.open-webui
     # unstable.ollama-cuda # damn this takes some time to build
     chromium
+    cargo
 
     # ricing
     cbonsai
