@@ -168,6 +168,7 @@
 
     nvidiaPersistenced = true;
   };
+  hardware.nvidia-container-toolkit.enable = true;
 
   # Enable sound with pipewire.
   hardware.pulseaudio.enable = false;
@@ -317,6 +318,7 @@
       enable = true;
       setSocketVariable = true;
     };
+    package = pkgs.docker_27;
   };
 
   fonts.enableDefaultPackages = true;
