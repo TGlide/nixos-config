@@ -282,6 +282,11 @@
     # unstable.ollama-cuda # damn this takes some time to build
     chromium
     cargo
+    dive
+    podman-tui
+    docker-compose
+    podman-compose
+    nvidia-container-toolkit
 
     # ricing
     cbonsai
@@ -312,13 +317,25 @@
     commandLineArgs = "--enable-features=UseOzonePlatform --ozone-platform=wayland";
   };
 
-  virtualisation.docker = {
-    enable = true;
-    rootless = {
+  virtualisation = {
+    containers.enable = true;
+    podman = {
       enable = true;
-      setSocketVariable = true;
+
+      # Create a `docker` alias for podman, to use it as a drop-in replacement
+      dockerCompat = true;
+
+      # Required for containers under podman-compose to be able to talk to each other.
+      defaultNetwork.settings.dns_enabled = true;
     };
-    package = pkgs.docker_27;
+    # docker = {
+    #   enable = true;
+    #   rootless = {
+    #     enable = true;
+    #     setSocketVariable = true;
+    #   };
+    #   package = pkgs.docker_27;
+    # };
   };
 
   fonts.enableDefaultPackages = true;
@@ -379,6 +396,12 @@
       	User git
       	IdentityFile ~/.ssh/github
       	AddKeysToAgent yes
+
+
+      Host runpod
+      	HostName ssh.runpod.io
+      	User x5d6g6areohzyh-64410d73
+      	IdentityFile ~/.ssh/runpod
     '';
   };
 
