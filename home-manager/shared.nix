@@ -58,6 +58,7 @@ in {
     vesktop
     slack
     localsend
+    calibre
   ];
 
   programs.spicetify = {

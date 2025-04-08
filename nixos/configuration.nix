@@ -308,6 +308,9 @@
     playerctl
     pipewire
     joystickwake
+
+    # general
+    smplayer
   ];
   # programs.nix-ld.enable = true;
 
@@ -422,9 +425,11 @@
   networking.firewall = {
     allowedTCPPorts = [
       53317
+      9090
     ];
     allowedUDPPorts = [
       53317
+      54982
     ];
   };
 
