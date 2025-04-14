@@ -4,7 +4,7 @@
 {
   config,
   pkgs,
-  # lib,
+  lib,
   inputs,
   unstable,
   ...
@@ -109,6 +109,15 @@
     LC_PAPER = "pt_PT.UTF-8";
     LC_TELEPHONE = "pt_PT.UTF-8";
     LC_TIME = "pt_PT.UTF-8";
+    LC_CTYPE = lib.mkDefault "pt_BR.UTF-8"; # Fix ç in us-intl.
+  };
+
+  i18n = {
+    inputMethod = {
+      enable = true;
+      type = "fcitx5";
+      fcitx5.waylandFrontend = config.nixos.desktop.wayland.enable;
+    };
   };
 
   # Enable the X11 windowing system.
