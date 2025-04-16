@@ -116,7 +116,7 @@
     inputMethod = {
       enable = true;
       type = "fcitx5";
-      fcitx5.waylandFrontend = config.nixos.desktop.wayland.enable;
+      fcitx5.waylandFrontend = true;
     };
   };
 
@@ -211,7 +211,11 @@
 
   programs.fish.enable = true;
 
-  programs.firefox.enable = true;
+  programs.firefox = {
+    enable = true;
+    package = pkgs.firefox;
+    nativeMessagingHosts.packages = [pkgs.firefoxpwa];
+  };
 
   programs.hyprland = {
     enable = true;
@@ -256,6 +260,7 @@
     steam-tui
     xmousepasteblock
     inputs.zen-browser.packages."${pkgs.system}".default
+    pkgs.firefoxpwa
 
     # terminal utils
     gtop

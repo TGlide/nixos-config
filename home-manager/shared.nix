@@ -30,6 +30,7 @@ in {
     (callPackage ../packages/claude-code {})
     mitmproxy
     nodePackages."@antfu/ni"
+    uv
 
     # terminal tools
     nerdfetch
@@ -55,10 +56,14 @@ in {
     spotify-player
     # spotify
     # spicetify-cli
-    vesktop
+    # vesktop
     slack
     localsend
     calibre
+    (discord.override {
+      # withOpenASAR = true;
+      # withVencord = true;
+    })
   ];
 
   programs.spicetify = {
