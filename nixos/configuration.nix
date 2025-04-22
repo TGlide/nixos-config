@@ -397,7 +397,10 @@
 
   hardware.keyboard.qmk.enable = true;
   services.udev.packages = [pkgs.via];
-  services.udev.extraRules = ''KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"'';
+  services.udev.extraRules = ''
+    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+    KERNEL=="ttyACM[0-9]*",MODE="0666"
+  '';
 
   programs.ssh = {
     startAgent = true;

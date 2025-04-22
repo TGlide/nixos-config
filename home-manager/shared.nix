@@ -28,6 +28,7 @@ in {
     unstable.git-lfs
     (callPackage ../packages/goose.nix {})
     (callPackage ../packages/claude-code {})
+    (callPackage ../packages/playdate-mirror {})
     mitmproxy
     nodePackages."@antfu/ni"
     uv
