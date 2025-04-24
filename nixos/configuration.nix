@@ -8,7 +8,9 @@
   inputs,
   unstable,
   ...
-}: {
+}: let
+  pkgs-unstable-hypr = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
+in {
   imports = [
     # Include the results of the hardware scan.
     ./hardware-configuration.nix
@@ -142,6 +144,14 @@
     enable = true;
   };
 
+  hardware.opengl = {
+    package = pkgs-unstable-hypr.mesa.drivers;
+
+    # if you also want 32-bit support (e.g for Steam)
+    driSupport32Bit = true;
+    package32 = pkgs-unstable-hypr.pkgsi686Linux.mesa.drivers;
+  };
+
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
 
@@ -220,6 +230,10 @@
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    # set the flake package
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+    # make sure to also set the portal package, so that they are in sync
+    portalPackage = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.xdg-desktop-portal-hyprland;
   };
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
@@ -464,4 +478,9 @@
   system.stateVersion = "24.11"; # Did you read the comment?
 
   boot.supportedFilesystems = ["ntfs"];
+
+  nix.settings = {
+    substituters = ["https://hyprland.cachix.org"];
+    trusted-public-keys = ["hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc="];
+  };
 }
