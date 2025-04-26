@@ -144,13 +144,13 @@ in {
     enable = true;
   };
 
-  hardware.opengl = {
-    package = pkgs-unstable-hypr.mesa.drivers;
-
-    # if you also want 32-bit support (e.g for Steam)
-    driSupport32Bit = true;
-    package32 = pkgs-unstable-hypr.pkgsi686Linux.mesa.drivers;
-  };
+  # hardware.opengl = {
+  #   package = pkgs-unstable-hypr.mesa.drivers;
+  #
+  #   # if you also want 32-bit support (e.g for Steam)
+  #   driSupport32Bit = true;
+  #   package32 = pkgs-unstable-hypr.pkgsi686Linux.mesa.drivers;
+  # };
 
   # Load nvidia driver for Xorg and Wayland
   services.xserver.videoDrivers = ["nvidia"];
@@ -183,7 +183,8 @@ in {
     nvidiaSettings = true;
 
     # Optionally, you may need to select the appropriate driver version for your specific GPU.
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
+    package = config.boot.kernelPackages.nvidiaPackages.beta; # NixOS Stable
+    # package = unstable.linuxPackages.nvidiaPackages.production; # NixOS unstable
 
     nvidiaPersistenced = true;
   };
