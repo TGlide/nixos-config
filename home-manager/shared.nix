@@ -65,6 +65,7 @@ in {
       # withOpenASAR = true;
       # withVencord = true;
     })
+    legcord
   ];
 
   programs.spicetify = {
