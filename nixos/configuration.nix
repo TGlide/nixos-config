@@ -288,7 +288,7 @@ in {
     notify-desktop
     ffmpeg
     ngrok
-    yazi
+    unstable.yazi
 
     # developer tools
     gh
