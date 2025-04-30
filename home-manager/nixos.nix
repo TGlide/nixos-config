@@ -1,7 +1,5 @@
 {
   pkgs,
-  lib,
-  inputs,
   unstable,
   ...
 }: {
@@ -93,18 +91,6 @@
     # with more details log output
     nix-output-monitor
   ];
-
-  imports = [
-    inputs.textfox.homeManagerModules.default
-  ];
-
-  textfox = {
-    enable = true;
-    profile = "textfox profile";
-    config = {
-      # Optional config
-    };
-  };
 
   programs.fish.functions = {
     modify_ags = ''

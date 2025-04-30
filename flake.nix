@@ -28,8 +28,6 @@
       url = "github:hraban/mac-app-util";
     };
 
-    textfox.url = "github:adriankarlen/textfox";
-
     hyprland.url = "github:hyprwm/Hyprland";
 
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
@@ -50,7 +48,10 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    agenix.url = "github:ryantm/agenix";
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs.home-manager.follows = "home-manager"; # Add this line
+    };
 
     zen-browser = {
       url = "github:0xc000022070/zen-browser-flake";
