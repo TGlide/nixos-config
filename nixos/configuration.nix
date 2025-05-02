@@ -31,6 +31,22 @@ in {
     systemd-boot = {
       enable = true;
       configurationLimit = 10;
+      # Corrected block
+      extraEntries = {
+        "cachyos.conf" = ''
+          title CachyOS
+          partition /dev/disk/by-uuid/6421-CAEE
+          volume dea7478f-5b9d-43cc-988a-d7a30929257d
+          linux /vmlinuz-linux-cachyos
+          initrd /initramfs-linux-cachyos.img
+          options root=UUID=dea7478f-5b9d-43cc-988a-d7a30929257d rw rootflags=subvol=/@ zswap.enabled=0 nowatchdog splash
+        '';
+        # You might also want to add Windows if it's not showing up
+        # "windows.conf" = ''
+        #   title Windows Boot Manager
+        #   efi /EFI/Microsoft/Boot/bootmgfw.efi
+        # '';
+      };
     };
     efi = {
       canTouchEfiVariables = true;
