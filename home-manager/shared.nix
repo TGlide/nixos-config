@@ -7,9 +7,6 @@
   spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.stdenv.system};
 in {
   home.packages = with pkgs; [
-    neofetch
-    nnn # terminal file manager
-
     # secrets
     rbw
 
@@ -18,18 +15,14 @@ in {
     alejandra
     lazygit
     chezmoi
-    kitty
-    wezterm
     unstable.bun
     nodejs_22
     pnpm
     yarn
-    # unstable.ghostty
     unstable.git-lfs
-    (callPackage ../packages/goose.nix {})
-    (callPackage ../packages/claude-code {})
-    (callPackage ../packages/playdate-mirror {})
-    mitmproxy
+    # (callPackage ../packages/goose.nix {})
+    # (callPackage ../packages/claude-code {})
+    # (callPackage ../packages/playdate-mirror {})
     nodePackages."@antfu/ni"
     uv
 
@@ -41,6 +34,8 @@ in {
     fzf # A command-line fuzzy finder
     tokei
     tldr
+    neofetch
+    yazi
 
     # LSPs
     lua-language-server
@@ -54,35 +49,35 @@ in {
     vscode-langservers-extracted
 
     # fun
-    spotify-player
+    # spotify-player
     # spotify
     # spicetify-cli
     # vesktop
-    slack
+    # slack
     localsend
     calibre
-    (discord.override {
-      # withOpenASAR = true;
-      # withVencord = true;
-    })
-    legcord
+    # (discord.override {
+    #   # withOpenASAR = true;
+    #   # withVencord = true;
+    # })
+    # legcord
   ];
 
-  programs.spicetify = {
-    enable = true;
-    enabledExtensions = with spicePkgs.extensions; [
-      # https://github.com/Gerg-L/spicetify-nix/blob/master/docs/EXTENSIONS.md
-      # adblockify
-      hidePodcasts
-      shuffle # shuffle+ (special characters are sanitized out of extension names)
-      keyboardShortcut
-      popupLyrics
-      skipStats
-    ];
-    # https://github.com/Gerg-L/spicetify-nix/blob/master/docs/THEMES.md
-    theme = spicePkgs.themes.catppuccin;
-    colorScheme = "macchiato";
-  };
+  # programs.spicetify = {
+  #   enable = true;
+  #   enabledExtensions = with spicePkgs.extensions; [
+  #     # https://github.com/Gerg-L/spicetify-nix/blob/master/docs/EXTENSIONS.md
+  #     # adblockify
+  #     hidePodcasts
+  #     shuffle # shuffle+ (special characters are sanitized out of extension names)
+  #     keyboardShortcut
+  #     popupLyrics
+  #     skipStats
+  #   ];
+  #   # https://github.com/Gerg-L/spicetify-nix/blob/master/docs/THEMES.md
+  #   theme = spicePkgs.themes.catppuccin;
+  #   colorScheme = "macchiato";
+  # };
 
   # basic configuration of git, please change to your own
   programs.git = {
@@ -122,6 +117,7 @@ in {
       export NIX_LD=$(nix eval --impure --raw --expr 'let pkgs = import <nixpkgs> {}; NIX_LD = pkgs.lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker"; in NIX_LD ')
       test -f ~/.config/myvars; and source ~/.config/myvars
       test -f /run/current-system/sw/share/autojump/autojump.fish; and source /run/current-system/sw/share/autojump/autojump.fish
+      test -f /home/thomasgl/.nix-profile/share/autojump/autojump.fish; and source /home/thomasgl/.nix-profile/share/autojump/autojump.fish
       nerdfetch
     '';
     plugins = [
