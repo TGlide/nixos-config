@@ -207,7 +207,9 @@
     # Home Manager standalone configuration for generic Linux systems
     homeConfigurations = {
       thomasgl = home-manager.lib.homeManagerConfiguration {
-        pkgs = x86_64-linux-pkgs;
+        pkgs = nixpkgs.legacyPackages.${x86_64-linux}.extend (final: prev: {
+          nixpkgs.overlays = import ./overlays;
+        });
         extraSpecialArgs = {
           inherit inputs;
           unstable = x86_64-linux-unstable-pkgs;
@@ -217,6 +219,7 @@
           ./home-manager/linux.nix
           {
             nixpkgs.config.allowUnfree = true;
+            nixpkgs.overlays = import ./overlays;
             home.stateVersion = "24.11";
           }
         ];

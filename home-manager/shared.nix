@@ -50,9 +50,9 @@ in {
 
     # fun
     # spotify-player
-    # spotify
+    spotify
     # spicetify-cli
-    # vesktop
+    vesktop
     # slack
     localsend
     calibre

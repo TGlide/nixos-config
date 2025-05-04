@@ -7,4 +7,5 @@
   (import ./vscode.nix)
   (import ./figma.nix)
   (import ./slack.nix)
+  (import ./legcord.nix)
 ]

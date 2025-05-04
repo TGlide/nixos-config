@@ -11,6 +11,8 @@
     neovim
     chezmoi
     tldr
+    obsidian
+    unstable.legcord
   ];
 
   programs.fish.enable = true;
