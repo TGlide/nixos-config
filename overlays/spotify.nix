@@ -4,8 +4,10 @@ final: prev: {
     postFixup = ''
       ${oldAttrs.postFixup or ""}
       wrapProgram $out/bin/spotify \
-        --add-flags "--enable-features=UseOzonePlatform" \
-        --add-flags "--ozone-platform=wayland"
+        --add-flags "--enable-features=UseOzonePlatform,VaapiVideoDecoder" \
+        --add-flags "--enable-features=WaylandWindowDecorations" \
+        --add-flags "--ozone-platform=wayland" \
+        --add-flags "--use-angle=vulkan" \
     '';
   });
 }
