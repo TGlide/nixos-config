@@ -1,8 +1,4 @@
-{
-  pkgs,
-  unstable,
-  ...
-}: {
+{pkgs, ...}: {
   home.username = "thomasgl";
   home.homeDirectory = "/home/thomasgl";
 
@@ -12,7 +8,6 @@
     chezmoi
     tldr
     obsidian
-    unstable.legcord
   ];
 
   programs.fish.enable = true;

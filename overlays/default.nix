@@ -1,11 +1,11 @@
 [
   # (import ./vesktop.nix)
   (import ./chromium.nix)
-  # (import ./spotify.nix)
+  (import ./spotify.nix)
   (import ./bitwarden.nix)
   (import ./obsidian.nix)
   (import ./vscode.nix)
   (import ./figma.nix)
   (import ./slack.nix)
-  (import ./legcord.nix)
+  # (import ./legcord.nix)
 ]
