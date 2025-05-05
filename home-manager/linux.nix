@@ -12,7 +12,7 @@
     chezmoi
     tldr
     obsidian
-    unstable.vscode
+    # unstable.vscode
   ];
 
   programs.fish.enable = true;
@@ -42,4 +42,6 @@
       	AddKeysToAgent yes
     '';
   };
+
+  home.sessionVariables = {};
 }
