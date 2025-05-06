@@ -59,6 +59,8 @@
       # to have it up to date or simply don't specify the nixpkgs input
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
+
+    inputs.swww.url = "github:LGFae/swww";
   };
 
   outputs = {

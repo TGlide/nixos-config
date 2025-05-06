@@ -118,6 +118,7 @@ in {
       test -f ~/.config/myvars; and source ~/.config/myvars
       test -f /run/current-system/sw/share/autojump/autojump.fish; and source /run/current-system/sw/share/autojump/autojump.fish
       test -f /home/thomasgl/.nix-profile/share/autojump/autojump.fish; and source /home/thomasgl/.nix-profile/share/autojump/autojump.fish
+      test -f ~/.env; and source ~/.env
       nerdfetch
     '';
     plugins = [

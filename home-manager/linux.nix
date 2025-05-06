@@ -1,6 +1,7 @@
 {
   pkgs,
   unstable,
+  inputs,
   ...
 }: {
   home.username = "thomasgl";
@@ -13,6 +14,7 @@
     tldr
     obsidian
     # unstable.vscode
+    inputs.swww.packages.${pkgs.system}.swww
   ];
 
   programs.fish.enable = true;
