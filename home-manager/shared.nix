@@ -154,6 +154,7 @@ in {
       gdt = "git diff-tree --no-commit-id --name-only -r";
       gf = "git fetch";
       ngoose = "nix-shell -p uv --run 'goose session'";
+      yay = "paru";
     };
     functions = {
       bw-unlock = ''set -Ux BW_SESSION (bw unlock --raw || echo "Error unlocking BW")'';

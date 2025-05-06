@@ -15,6 +15,8 @@
     obsidian
     # unstable.vscode
     inputs.swww.packages.${pkgs.system}.swww
+    inputs.matugen.packages.${pkgs.system}.default
+    unstable.claude-code
   ];
 
   programs.fish.enable = true;

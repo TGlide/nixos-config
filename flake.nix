@@ -60,7 +60,13 @@
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
-    inputs.swww.url = "github:LGFae/swww";
+    swww.url = "github:LGFae/swww";
+
+    matugen = {
+      url = "github:/InioX/Matugen";
+      # If you need a specific version:
+      # ref = "refs/tags/matugen-v0.10.0";
+    };
   };
 
   outputs = {
